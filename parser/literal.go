@@ -37,7 +37,7 @@ type String struct {
 func (s String) GetVal() interface{} { return s.Value }
 
 type Bool struct {
-	Value boolCapture `parser:"@('TRUE'|'FALSE')"`
+	Value boolCapture `parser:"@Bool"`
 }
 
 func (b Bool) GetVal() interface{} { return b.Value }
