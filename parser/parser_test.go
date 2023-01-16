@@ -47,3 +47,15 @@ func TestInsertStatement(t *testing.T) {
     parsed := HelpParse(t, text)
     PrettyPrint(t, parsed)
 }
+
+func TestSelectStatement(t *testing.T) {
+    text := 
+    "SELECT * FROM students\n" +
+    "WHERE score < 5.0 AND graduated = TRUE OR lastname = \"Doe\"\n" +
+    "GROUP BY graduated, lastname\n" +
+    "ORDER BY score DESC\n" +
+    "LIMIT 10;"
+
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
+}

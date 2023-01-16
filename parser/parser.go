@@ -14,6 +14,7 @@ func NewParser() (*participle.Parser[SqlFile], error) {
 			&CreateStatement{},
 			&DropStatement{},
 			&InsertStatement{},
+            &SelectStatement{},
 		),
 		participle.Union[Literal](
 			Bool{},

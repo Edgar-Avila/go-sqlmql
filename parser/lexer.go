@@ -65,6 +65,58 @@ func newLexer() (lexer.Definition, error) {
             Name: `Values`,
             Pattern: `(?i)VALUES`,
         },
+        {
+            Name: `Not`,
+            Pattern: `(?i)NOT`,
+        },
+        {
+            Name: `Where`,
+            Pattern: `(?i)WHERE`,
+        },
+        {
+            Name: `And`,
+            Pattern: `(?i)AND`,
+        },
+        {
+            Name: `Order`,
+            Pattern: `(?i)ORDER`,
+        },
+        {
+            Name: `Or`,
+            Pattern: `(?i)OR`,
+        },
+        {
+            Name: `Select`,
+            Pattern: `(?i)SELECT`,
+        },
+        {
+            Name: `Distinct`,
+            Pattern: `(?i)DISTINCT`,
+        },
+        {
+            Name: `From`,
+            Pattern: `(?i)FROM`,
+        },
+        {
+            Name: `Group`,
+            Pattern: `(?i)GROUP`,
+        },
+        {
+            Name: `By`,
+            Pattern: `(?i)BY`,
+        },
+        {
+            Name: `Limit`,
+            Pattern: `(?i)Limit`,
+        },
+        {
+            Name: `Asc`,
+            Pattern: `(?i)ASC`,
+        },
+        {
+            Name: `Desc`,
+            Pattern: `(?i)DESC`,
+        },
 
 		// ******************************************************************
 		// *********                 Data Types                     *********
