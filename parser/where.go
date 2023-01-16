@@ -20,5 +20,5 @@ type BoolTerm struct {
 
 // Where clause
 type Where struct {
-	Terms []BoolTerm `parser:"'WHERE' @@ (Or @@)*"`
+	Terms []BoolTerm `parser:"Where @@ (Or @@)*"`
 }
