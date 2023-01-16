@@ -117,6 +117,10 @@ func newLexer() (lexer.Definition, error) {
             Name: `Desc`,
             Pattern: `(?i)DESC`,
         },
+        {
+            Name: `Delete`,
+            Pattern: `(?i)DELETE`,
+        },
 
 		// ******************************************************************
 		// *********                 Data Types                     *********

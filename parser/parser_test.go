@@ -59,3 +59,11 @@ func TestSelectStatement(t *testing.T) {
     parsed := HelpParse(t, text)
     PrettyPrint(t, parsed)
 }
+
+func TestDeleteStatement(t *testing.T) {
+    text := 
+    "DELETE FROM students\n" +
+    "WHERE score < 5.0"
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
+}
