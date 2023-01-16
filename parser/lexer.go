@@ -53,6 +53,19 @@ func newLexer() (lexer.Definition, error) {
             Name: `Exists`,
             Pattern: `(?i)EXISTS`,
         },
+        {
+            Name: `Insert`,
+            Pattern: `(?i)INSERT`,
+        },
+        {
+            Name: `Into`,
+            Pattern: `(?i)INTO`,
+        },
+        {
+            Name: `Values`,
+            Pattern: `(?i)VALUES`,
+        },
+
 		// ******************************************************************
 		// *********                 Data Types                     *********
 		// ******************************************************************

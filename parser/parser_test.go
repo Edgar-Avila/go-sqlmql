@@ -35,3 +35,15 @@ func TestDropStatement(t *testing.T) {
     parsed := HelpParse(t, text)
     PrettyPrint(t, parsed)
 }
+
+func TestInsertStatement(t *testing.T) {
+    text := 
+    "INSERT INTO students\n" +
+    "(id, name, lastname, graduated, score)\n" +
+    "VALUES\n" + 
+    "(1, 'John', 'Doe', TRUE, 10.0),\n" +
+    "(2, 'Jane', 'Doe', FALSE, 10.0);"
+
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
+}
