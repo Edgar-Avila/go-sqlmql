@@ -12,6 +12,7 @@ func NewParser() (*participle.Parser[SqlFile], error) {
 		participle.Lexer(lexer),
         participle.Union[Statement](
             &CreateStatement{},
+            &DropStatement{},
         ),
 	)
 }

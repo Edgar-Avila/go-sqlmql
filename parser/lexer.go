@@ -37,6 +37,22 @@ func newLexer() (lexer.Definition, error) {
             Name: `Unique`,
             Pattern: `(?i)UNIQUE`,
         },
+        {
+            Name: `Drop`,
+            Pattern: `(?i)DROP`,
+        },
+        {
+            Name: `Temporary`,
+            Pattern: `(?i)TEMPORARY`,
+        },
+        {
+            Name: `If`,
+            Pattern: `(?i)IF`,
+        },
+        {
+            Name: `Exists`,
+            Pattern: `(?i)EXISTS`,
+        },
 		// ******************************************************************
 		// *********                 Data Types                     *********
 		// ******************************************************************

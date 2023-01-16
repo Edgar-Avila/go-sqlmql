@@ -11,16 +11,27 @@ func PrettyPrint(t *testing.T, obj interface{}) {
     t.Log(string(b))
 }
 
-func TestCreateStatement(t *testing.T) {
+func HelpParse(t *testing.T, text string) (*SqlFile) {
+    t.Helper()
     parser, err := NewParser()
     if err != nil {
         t.Fatal(err)
     }
-
-    text := "CREATE TABLE students (Id VARCHAR(100) NOT NULL);"
     parsed, err := parser.ParseString("", text)
     if err != nil {
         t.Fatal(err)
     }
-    PrettyPrint(t, &parsed)
+    return parsed
+}
+
+func TestCreateStatement(t *testing.T) {
+    text := "CREATE TABLE students (code VARCHAR(100) PRIMARY KEY);"
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
+}
+
+func TestDropStatement(t *testing.T) {
+    text := "DROP TABLE IF EXISTS students, users, classes;"
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
 }
