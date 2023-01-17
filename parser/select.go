@@ -28,7 +28,7 @@ type SelectStatement struct {
 	Where    *Where     `parser:"@@?"`
 	GroupBy  []string   `parser:"(Group By @Ident (',' @Ident)*)?"`
 	OrderBy  []SortSpec `parser:"(Order By @@ (',' @@)*)?"`
-	Limit    int64      `parser:"(Limit @Int)? ';'?"`
+	Limit    int64      `parser:"(Limit @Int)?"`
 }
 
 func (s *SelectStatement) stmt() {}

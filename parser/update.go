@@ -8,7 +8,7 @@ type Assignment struct {
 type UpdateStatement struct {
 	Name    string       `parser:"Update @Ident"`
 	Changes []Assignment `parser:"Set @@ (',' @@)*"`
-	Where   *Where       `parser:"@@? ';'?"`
+	Where   *Where       `parser:"@@?"`
 }
 
 func (u *UpdateStatement) stmt() {}

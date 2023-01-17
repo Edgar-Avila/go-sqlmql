@@ -16,7 +16,7 @@ type ColumnDeclaration struct {
 // Create statement, wiht a name and the columns needed
 type CreateStatement struct {
 	Name string              `parser:"Create Table @Ident"`
-	Cols []ColumnDeclaration `parser:"'(' @@ (',' @@)* ')' ';'?"`
+	Cols []ColumnDeclaration `parser:"'(' @@ (',' @@)* ')'"`
 }
 
 func (c *CreateStatement) stmt() {}
