@@ -67,3 +67,12 @@ func TestDeleteStatement(t *testing.T) {
     parsed := HelpParse(t, text)
     PrettyPrint(t, parsed)
 }
+
+func TestUpdateStatement(t *testing.T) {
+    text := 
+    "UPDATE students\n" + 
+    "SET score = 6.0, graduated = TRUE\n" + 
+    "WHERE score = 5.5;"
+    parsed := HelpParse(t, text)
+    PrettyPrint(t, parsed)
+}
