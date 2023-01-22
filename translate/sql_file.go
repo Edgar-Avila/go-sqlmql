@@ -11,6 +11,8 @@ func TranslateSqlFile(sqlFile *parser.SqlFile) (string, error) {
 		switch s := statement.(type) {
 		case *parser.DropStatement:
 			return TranslateDrop(s)
+        case *parser.InsertStatement:
+            return TranslateInsert(s)
 		default:
 			return "", fmt.Errorf("Invalid statement type %T", s)
 		}

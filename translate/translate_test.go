@@ -32,3 +32,36 @@ func TestDrop(t *testing.T) {
 		t.Fatal("Translated and wanted do not match")
 	}
 }
+
+func TestInsert(t *testing.T) {
+    text := 
+    `
+		INSERT INTO students
+        (id, name, lastname, graduated, score)
+        VALUES
+        (1, 'John', 'Doe', TRUE, 10.0),
+        (2, 'Jane', 'Doe', FALSE, 10.0);
+    `
+	translated := HelpTranslate(t, text)
+	want := 
+`db.students.insertMany([{
+  id: 1,
+  name: "John",
+  lastname: "Doe",
+  graduated: true,
+  score: 10
+},
+{
+  id: 2,
+  name: "Jane",
+  lastname: "Doe",
+  graduated: false,
+  score: 10
+}]`
+	fmt.Println(translated)
+	if translated != want {
+		t.Fatal("Translated and wanted do not match")
+	}
+}
+
+
