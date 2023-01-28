@@ -65,3 +65,18 @@ func TestInsert(t *testing.T) {
 }
 
 
+func TestSelect(t *testing.T) {
+    text := 
+`
+SELECT name FROM students 
+WHERE score >= 70 AND graduated = TRUE OR name = "Amadeus"
+ORDER BY score DESC
+LIMIT 3;
+`
+    want := "db.students.find({$or:[{$and:[{score:{$gte:70}},{graduated:{$eq:true}}]},{name:{$eq:\"Amadeus\"}}]}, {_id: 0,name: 1}).sort({score: -1}).limit(3);"
+    translated := HelpTranslate(t, text)
+    fmt.Println(translated)
+	if translated != want {
+		t.Fatal("Translated and wanted do not match")
+	}
+}
