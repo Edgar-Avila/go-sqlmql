@@ -80,3 +80,18 @@ LIMIT 3;
 		t.Fatal("Translated and wanted do not match")
 	}
 }
+
+func TestUpdate(t *testing.T) {
+    text := 
+`
+UPDATE students
+SET score = 11
+WHERE score = 9 OR score = 10 OR name = "Amadeus"
+`
+    want := "db.students.updateMany({$or:[{score:{$eq:9}},{score:{$eq:10}},{name:{$eq:\"Amadeus\"}}]}, {$set: {score: 11}})"
+    translated := HelpTranslate(t, text)
+    fmt.Println(translated)
+	if translated != want {
+		t.Fatal("Translated and wanted do not match")
+	}
+}
