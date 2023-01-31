@@ -30,7 +30,7 @@ func TranslateInsert(insertStmt *parser.InsertStatement) (string, error) {
 		docs[i] = doc
 	}
 	translated += strings.Join(docs, ",\n")
-	translated += "]"
+	translated += "]);"
 
 	return translated, nil
 }

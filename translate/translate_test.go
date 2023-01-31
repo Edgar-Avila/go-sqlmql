@@ -57,7 +57,7 @@ func TestInsert(t *testing.T) {
   lastname: "Doe",
   graduated: false,
   score: 10
-}]`
+}]);`
 	fmt.Println(translated)
 	if translated != want {
 		t.Fatal("Translated and wanted do not match")
