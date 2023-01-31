@@ -22,6 +22,6 @@ func TranslateUpdate(updateStmt *parser.UpdateStatement) (string, error) {
 		changeArr[i] = fmt.Sprintf("%s: %s", change.Name, lit)
 	}
 	update := fmt.Sprintf("{$set: {%s}}", strings.Join(changeArr, ","))
-	translated := fmt.Sprintf("db.%s.updateMany(%s, %s)", name, filter, update)
+	translated := fmt.Sprintf("db.%s.updateMany(%s, %s);", name, filter, update)
 	return translated, nil
 }
