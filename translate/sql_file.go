@@ -9,6 +9,8 @@ import (
 func TranslateSqlFile(sqlFile *parser.SqlFile) (string, error) {
 	for _, statement := range sqlFile.Statements {
 		switch s := statement.(type) {
+		case *parser.CreateStatement:
+			return TranslateCreate(s)
 		case *parser.DropStatement:
 			return TranslateDrop(s)
         case *parser.InsertStatement:

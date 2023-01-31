@@ -95,3 +95,19 @@ WHERE score = 9 OR score = 10 OR name = "Amadeus"
 		t.Fatal("Translated and wanted do not match")
 	}
 }
+
+func TestCreate(t *testing.T) {
+    text := 
+`
+CREATE TABLE students(
+    id INT,
+    name VARCHAR(100)
+)
+`
+    want := "db.createCollection(\"students\");"
+    translated := HelpTranslate(t, text)
+    fmt.Println(translated)
+	if translated != want {
+		t.Fatal("Translated and wanted do not match")
+	}
+}
