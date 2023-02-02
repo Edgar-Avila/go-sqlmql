@@ -111,3 +111,17 @@ CREATE TABLE students(
 		t.Fatal("Translated and wanted do not match")
 	}
 }
+
+func TestDelete(t *testing.T) {
+    text := 
+`
+DELETE FROM students
+WHERE id = 2 OR score < 2
+`
+    want := "db.students.deleteMany({$or:[{id:{$eq:2}},{score:{$lt:2}}]});"
+    translated := HelpTranslate(t, text)
+    fmt.Println(translated)
+	if translated != want {
+		t.Fatal("Translated and wanted do not match")
+	}
+}

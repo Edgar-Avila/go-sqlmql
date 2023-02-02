@@ -20,6 +20,8 @@ func TranslateStatement(statement parser.Statement) (string, error) {
         return TranslateSelect(s)
     case *parser.UpdateStatement:
         return TranslateUpdate(s)
+    case *parser.DeleteStatement:
+        return TranslateDelete(s)
     default:
         return "", fmt.Errorf("Invalid statement type %T", s)
     }
